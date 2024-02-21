@@ -1,0 +1,9 @@
+<h1>Add a new restaurant!</h1>
+
+<%= simple_form_for @restaurant do |f| %>
+  <%= f.input :name, error: 'Name is mandatory' %>
+  <%= f.input :address, error: 'Address is mandatory' %>
+  <%= f.input :category, error: 'Category is mandatory', collection: [['chinese','chinese'], ['japanese','japanese'], ['italian','italian'], ['french','french'], ['belgian','belgian']] %>
+
+  <%= f.button :submit %>
+<% end %>

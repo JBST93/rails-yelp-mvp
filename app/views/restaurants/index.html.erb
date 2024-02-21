@@ -1,0 +1,6 @@
+<h1>Welcome to the notorious restaurant listing page! </h1>
+
+
+  <%= link_to "Add Restaurant", new_restaurant_path, class:"btn btn-primary"%>
+
+  <p><%= render "card", restaurant: @restaurant %></p>

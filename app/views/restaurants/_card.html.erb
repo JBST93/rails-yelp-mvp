@@ -1,0 +1,17 @@
+<% @restaurants.each do |restaurant| %>
+<div class="card">
+
+  <div class="card-body">
+    <h5 class="card-title"><%= restaurant.name.capitalize %></h5>
+    <p class="card-text"><%= restaurant.category.capitalize %></p>
+
+    <% unless restaurant.reviews.empty?%>
+    <p class="card-text">Average Rating: <%= restaurant.average_rating %><%= ' ⭐️' * restaurant.average_rating %></p>
+    <% end %>
+
+    <p> <%= link_to "Read More", restaurant %>
+    <p class="card-text"><small class="text-muted"><%= restaurant.created_at %></small></p>
+  </div>
+</div>
+<br>
+<% end %>
