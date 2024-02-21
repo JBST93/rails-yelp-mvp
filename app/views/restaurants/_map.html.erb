@@ -1,0 +1,26 @@
+<div id="map-container">
+<div id="map" class="mapboxgl-map"></div>
+</div>
+
+<style>
+#map-container {
+    position: relative;
+    height: 100%;
+    width: 600px;
+}
+
+#map {
+    position: relative;
+    height: inherit;
+    width: inherit;
+}
+</style>
+
+<script>
+	mapboxgl.accessToken = 'pk.eyJ1IjoiamFjZWtiYXN0aW45MyIsImEiOiJjbHNpeG83YzQyOTBtMmpubzk4bGU0Y2I3In0.3LU7cAxgIwWOqfEeFV2nHA';
+const map = new mapboxgl.Map({
+container: 'map', // container ID
+center: [-74.5, 40], // starting position [lng, lat]
+zoom: 9 // starting zoom
+});
+</script>
