@@ -7,3 +7,19 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+require 'faker'
+
+Restaurant.destroy_all
+
+puts "Starting to populate DB"
+5.times do
+  restaurant = Restaurant.new(
+    name: Faker::Creature::Animal.name ,
+    address: Faker::Address.street_address,
+    phone_number: Faker::PhoneNumber.phone_number,
+    category: ["chinese", "italian", "japanese","french","belgian"].sample
+  )
+  puts "#{restaurant.name} has been added to the DB"
+end
+
+puts "DB has been populated"
